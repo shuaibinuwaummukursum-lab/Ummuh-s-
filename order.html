@@ -1,0 +1,594 @@
+
+<?php
+require_once "db.php";
+?>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet"
+        href="./style.css">
+
+    <title>Order - Ummuh's Kitchen</title>
+
+</head>
+
+<body>
+
+
+<!-- =========================
+     NAVIGATION
+========================= -->
+
+<nav>
+
+    <div class="logo">
+        <img src="./Screenshot 2026-09-25 115914.png"
+            alt="Ummuh's Kitchen Logo">
+    </div>
+
+    <div class="nav-links">
+
+        <a href="index.html">
+            <i class="fa-solid fa-house"></i>
+            Home
+        </a>
+
+        <a href="index.html#menu">
+            <i class="fa-solid fa-utensils"></i>
+            Menu
+        </a>
+
+        <a href="index.html#about">
+            <i class="fa-solid fa-circle-info"></i>
+            About
+        </a>
+
+        <a href="index.html#image">
+            <i class="fa-solid fa-heart"></i>
+            Why Choose Us
+        </a>
+
+        <a href="index.html#gallery">
+            <i class="fa-solid fa-images"></i>
+            Images
+        </a>
+
+        <a href="index.html#contact">
+            <i class="fa-solid fa-phone"></i>
+            Contact Us
+        </a>
+
+        <a href="cart.html">
+            <i class="fa-solid fa-cart-shopping"></i>
+            Cart
+        </a>
+
+    </div>
+
+
+    <!-- MOBILE MENU -->
+
+    <div class="menu-toggle">
+
+        <span></span>
+        <span></span>
+        <span></span>
+
+    </div>
+
+</nav>
+
+
+
+<!-- =========================
+     ORDER SECTION
+========================= -->
+
+<section class="orderwrapp">
+
+    <div class="order">
+
+        <span class="section-small">
+            PLACE YOUR ORDER
+        </span>
+
+        <h1>
+            Order Your Favourite Food
+        </h1>
+
+        <p class="order-text">
+            Fill in your details and choose the food you want.
+        </p>
+
+
+
+        <!-- NAME -->
+
+        <div class="form-group">
+
+            <label for="name">
+
+                <i class="fa-solid fa-user"></i>
+
+                Full Name
+
+            </label>
+
+            <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Enter your full name"
+                required>
+
+        </div>
+
+
+
+        <!-- PHONE -->
+
+        <div class="form-group">
+
+            <label for="phone">
+
+                <i class="fa-solid fa-phone"></i>
+
+                Phone Number
+
+            </label>
+
+            <input
+                type="tel"
+                id="phone"
+                name="phone"
+                placeholder="Enter your phone number"
+                required>
+
+        </div>
+
+
+
+        <!-- FOOD -->
+
+        <div class="form-group">
+
+            <label for="food">
+
+                <i class="fa-solid fa-utensils"></i>
+
+                Choose Food
+
+            </label>
+
+            <select
+                id="food"
+                name="food"
+                onchange="calculateTotal()"
+                required>
+
+                <option value="">
+                    -- Select Food --
+                </option>
+
+                <option
+                    value="Samosa"
+                    data-price="1500">
+
+                    Samosa - ₦1,500
+
+                </option>
+
+                <option
+                    value="Shawarma"
+                    data-price="3000">
+
+                    Shawarma - ₦3,000
+
+                </option>
+
+                <option
+                    value="Spring Rolls"
+                    data-price="1500">
+
+                    Spring Rolls - ₦1,500
+
+                </option>
+
+                <option
+                    value="Cupcake"
+                    data-price="1500">
+
+                    Cupcake - ₦1,500
+
+                </option>
+
+                <option
+                    value="Special Snack"
+                    data-price="1500">
+
+                    Special Snack - ₦1,500
+
+                </option>
+
+                <option
+                    value="Yam Dish"
+                    data-price="1500">
+
+                    Yam Dish - ₦1,500
+
+                </option>
+
+            </select>
+
+        </div>
+
+
+
+        <!-- QUANTITY -->
+
+        <div class="form-group">
+
+            <label>
+
+                <i class="fa-solid fa-layer-group"></i>
+
+                Quantity
+
+            </label>
+
+
+            <div class="quantity">
+
+                <button
+                    type="button"
+                    onclick="decreaseQuantity()">
+
+                    −
+
+                </button>
+
+
+                <span id="quantity">
+                    1
+                </span>
+
+
+                <button
+                    type="button"
+                    onclick="increaseQuantity()">
+
+                    +
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- TOTAL -->
+
+        <div class="total-price">
+
+            <p>
+                Total Amount
+            </p>
+
+            <h2 id="total">
+                ₦0
+            </h2>
+
+        </div>
+
+
+
+        <!-- ADDRESS -->
+
+        <div class="form-group">
+
+            <label for="address">
+
+                <i class="fa-solid fa-location-dot"></i>
+
+                Delivery Address
+
+            </label>
+
+            <textarea
+                id="address"
+                name="address"
+                placeholder="Enter your delivery address"
+                required></textarea>
+
+        </div>
+
+
+
+        <!-- PLACE ORDER BUTTON -->
+
+        <button
+            class="btn"
+            type="button"
+            onclick="placeOrder()">
+
+            Place Order
+
+            <i class="fa-solid fa-arrow-right"></i>
+
+        </button>
+
+
+
+        <!-- BACK -->
+
+        <a
+            href="index.html#menu"
+            class="back-home">
+
+            <i class="fa-solid fa-arrow-left"></i>
+
+            Back to Menu
+
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer class="footer">
+
+    <div class="footer-content">
+
+        <h2>
+            Ummuh's Kitchen
+        </h2>
+
+        <p>
+            Homemade food prepared with love,
+            freshness and care.
+        </p>
+
+        <div class="social-icons">
+
+            <a href="#">
+                <i class="fa-brands fa-facebook"></i>
+            </a>
+
+            <a href="#">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+
+            <a href="#">
+                <i class="fa-brands fa-tiktok"></i>
+            </a>
+
+            <a href="#">
+                <i class="fa-brands fa-whatsapp"></i>
+            </a>
+
+        </div>
+
+    </div>
+
+    <p class="copyright">
+
+        © 2026 Ummuh's Kitchen & More.
+        All Rights Reserved.
+
+    </p>
+
+</footer>
+
+
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
+<script>
+
+    /* =========================
+       QUANTITY
+    ========================= */
+
+    let quantity = 1;
+
+
+    function increaseQuantity() {
+
+        quantity++;
+
+        document.getElementById("quantity").textContent = quantity;
+
+        calculateTotal();
+
+    }
+
+
+
+    function decreaseQuantity() {
+
+        if (quantity > 1) {
+
+            quantity--;
+
+            document.getElementById("quantity").textContent = quantity;
+
+            calculateTotal();
+
+        }
+
+    }
+
+
+
+    /* =========================
+       CALCULATE TOTAL
+    ========================= */
+
+    function calculateTotal() {
+
+        const food =
+            document.getElementById("food");
+
+        const selectedOption =
+            food.options[food.selectedIndex];
+
+
+        /* If no food selected */
+
+        if (!selectedOption.value) {
+
+            document.getElementById("total").textContent = "₦0";
+
+            return;
+
+        }
+
+
+        /* Get food price */
+
+        const price =
+            Number(selectedOption.dataset.price);
+
+
+        /* Calculate */
+
+        const total =
+            price * quantity;
+
+
+        /* Show total */
+
+        document.getElementById("total").textContent =
+            "₦" + total.toLocaleString();
+
+    }
+
+
+
+    /* =========================
+       PLACE ORDER
+    ========================= */
+
+    function placeOrder() {
+
+        const name =
+            document.getElementById("name").value.trim();
+
+        const phone =
+            document.getElementById("phone").value.trim();
+
+        const food =
+            document.getElementById("food").value;
+
+        const address =
+            document.getElementById("address").value.trim();
+
+
+        /* Check fields */
+
+        if (!name || !phone || !food || !address) {
+
+            alert(
+                "Please fill in all the required fields."
+            );
+
+            return;
+
+        }
+
+
+        /* Get selected food */
+
+        const select =
+            document.getElementById("food");
+
+
+        const selectedOption =
+            select.options[select.selectedIndex];
+
+
+        /* Get price */
+
+        const price =
+            Number(selectedOption.dataset.price);
+
+
+        /* Calculate total */
+
+        const total =
+            price * quantity;
+
+
+        /* Show order */
+
+        alert(
+
+            "Thank you " + name + "!" +
+
+            "\n\nFood: " + food +
+
+            "\nQuantity: " + quantity +
+
+            "\nTotal: ₦" +
+            total.toLocaleString() +
+
+            "\n\nYour order has been received."
+
+        );
+
+    }
+
+
+
+    /* =========================
+       MOBILE NAVIGATION
+    ========================= */
+
+    const menuToggle =
+        document.querySelector(".menu-toggle");
+
+    const navLinks =
+        document.querySelector(".nav-links");
+
+
+    if (menuToggle && navLinks) {
+
+        menuToggle.addEventListener(
+            "click",
+            function () {
+
+                navLinks.classList.toggle("active");
+
+            }
+        );
+
+    }
+
+</script>
+
+
+</body>
+
+</html>

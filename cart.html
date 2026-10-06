@@ -1,0 +1,152 @@
+
+<?php
+require_once "db.php";
+?>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="./style.css">
+
+    <title>Your Cart - Ummuh's Kitchen</title>
+
+</head>
+
+<body>
+
+
+<!-- ================= NAVIGATION ================= -->
+
+<nav>
+
+    <img
+        src="./Screenshot 2026-09-25 115914.png"
+        alt="Ummuh's Kitchen Logo">
+
+    <h2>
+        Ummuh'<span>s</span> Kitchen
+    </h2>
+
+    <div class="nav-links">
+
+        <a href="index.html">
+            <i class="fa-solid fa-house"></i>
+            Home
+        </a>
+
+        <a href="index.html#menu">
+            <i class="fa-solid fa-utensils"></i>
+            Menu
+        </a>
+
+        <a href="index.html#about">
+            <i class="fa-solid fa-circle-info"></i>
+            About
+        </a>
+
+        <a href="index.html#contact">
+            <i class="fa-solid fa-phone"></i>
+            Contact Us
+        </a>
+
+    </div>
+
+    <button class="menu-toggle" type="button">
+        <i class="fa-solid fa-bars"></i>
+    </button>
+
+</nav>
+
+
+<!-- ================= CART ================= -->
+
+<section class="cart-section">
+
+    <span class="section-small">
+        YOUR CART
+    </span>
+
+    <h1>
+        Shopping Cart
+    </h1>
+
+    <p class="cart-intro">
+        Check your selected food before placing your order.
+    </p>
+
+
+    <div id="cart-container">
+
+        <!-- JavaScript will put cart items here -->
+
+    </div>
+
+
+    <div class="cart-bottom">
+
+        <h2>
+            Total:
+            <span id="cart-total">₦0</span>
+        </h2>
+
+        <button
+            class="btn"
+            type="button"
+            onclick="goToOrder()">
+
+            Place Order
+            <i class="fa-solid fa-arrow-right"></i>
+
+        </button>
+
+    </div>
+
+
+    <a href="index.html#menu" class="back-home">
+
+        <i class="fa-solid fa-arrow-left"></i>
+
+        Continue Shopping
+
+    </a>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="footer">
+
+    <h2>
+        Ummuh's Kitchen
+    </h2>
+
+    <p>
+        Homemade Food With Love ❤️
+    </p>
+
+    <p class="copyright">
+        © 2026 Ummuh's Kitchen & More.
+        All Rights Reserved.
+    </p>
+
+</footer>
+
+
+<script src="./script.js"></script>
+
+</body>
+
+</html>

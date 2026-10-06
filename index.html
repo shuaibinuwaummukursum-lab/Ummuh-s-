@@ -1,0 +1,542 @@
+
+<?php
+require_once "db.php";
+?>
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+    
+
+    <title>Ummuh's Kitchen</title>
+
+</head>
+
+<body>
+
+
+<!-- ================= NAVIGATION ================= -->
+
+<nav>
+
+    <img src="./Screenshot 2026-09-25 115914.png"
+        alt="Ummuh's Kitchen Logo">
+        <br>
+
+    <h2>
+        Ummuh'<span>s</span> Kitchen
+    </h2>
+
+    <div class="nav-links">
+
+        <a href="">
+            <i class="fa-solid fa-house"></i>
+            Home
+        </a>
+
+        <a href="#menu">
+            <i class="fa-solid fa-utensils"></i>
+            Menu
+        </a>
+
+        <a href="#about">
+            <i class="fa-solid fa-circle-info"></i>
+            About
+        </a>
+
+        <a href="#image">
+            <i class="fa-solid fa-star"></i>
+            Why Choose Us?
+        </a>
+
+        <a href="#gallery">
+            <i class="fa-solid fa-images"></i>
+            Images
+        </a>
+
+        <a href="#contact">
+            <i class="fa-solid fa-phone"></i>
+            Contact Us
+        </a>
+
+    </div>
+
+    <button class="menu-toggle" type="button">
+        <i class="fa-solid fa-bars"></i>
+    </button>
+
+</nav>
+
+
+<!-- ================= HERO SECTION ================= -->
+
+<div class="headline">
+
+    <div class="Uk1">
+
+        <span class="welcome-text">
+            WELCOME TO
+        </span>
+
+        <h1>
+            Ummuh's <span>Kitchen</span>
+        </h1>
+
+        <p>
+            Homemade food prepared with love,
+            freshness and care.
+        </p>
+
+        <p class="small-text">
+            Delicious meals and snacks made specially
+            for you and your loved ones.
+        </p>
+
+        <a href="order.html" class="btn">
+    Order Now
+    <i class="fa-solid fa-arrow-right"></i>
+</a>
+    </div>
+
+
+    <div class="Uk">
+
+          <video
+        src="./video-1.mp4"
+        autoplay
+        loop
+        muted
+        playsinline>
+    </video>
+
+    </div>
+
+</div>
+
+
+<!-- ================= MENU ================= -->
+
+<div class="Menuwrap" id="menu">
+
+    <span class="section-small">
+        OUR MENU
+    </span>
+
+    <h4>
+        Our Popular Menu
+    </h4>
+
+    <p class="section-description">
+        Fresh, delicious and homemade food prepared with love.
+    </p>
+
+<div class="menu-video">
+
+    <video
+        src="./menu.mp4"
+        autoplay
+        loop
+        muted
+        playsinline>
+    </video>
+
+</div>
+
+
+
+<br>
+    <div class="maxImgWrap">
+
+        <!-- CUPCAKE -->
+
+        <div class="imgwrapp">
+
+            <div class="food-image">
+
+                <img
+                    src="./imagefolder/galary5.png"
+                    alt="Cupcake">
+
+            </div>
+
+            <h3>
+           
+
+
+
+  <p>
+                Homemade Meal
+            </p>
+
+            <strong>
+                ₦4,000
+            </strong>
+                
+        <a href="order.html" class="btn">
+    Order Now
+    <i class="fa-solid fa-arrow-right"></i>
+</a>
+        </div>
+
+
+        <!-- SPECIAL SNACK -->
+
+        <div class="imgwrapp">
+
+            <div class="food-image">
+
+                <img
+                    src="./imagefolder/galary6.png"
+                    alt="Special Snack">
+
+            </div>
+
+           
+
+            <p>
+                Freshly Prepared
+            </p>
+
+            <strong>
+                ₦3,000
+            </strong>
+
+           
+        <a href="order.html" class="btn">
+    Order Now
+    <i class="fa-solid fa-arrow-right"></i>
+</a>
+
+        </div>
+
+
+        <!-- YAM -->
+
+        <div class="imgwrapp">
+
+            <div class="food-image">
+
+                <img
+                    src="./imagefolder/galary7.png"
+                    alt="Yam Dish">
+
+            </div>
+
+           
+            <p>
+                Homemade Meal
+            </p>
+
+            <strong>
+                ₦4,000
+            </strong>
+
+         
+        <a href="order.html" class="btn">
+    Order Now
+    <i class="fa-solid fa-arrow-right"></i>
+</a>
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ================= ABOUT ================= -->
+
+<div class="aboutwrapp" id="about">
+
+    <div class="about1">
+
+        <span class="section-small">
+            ABOUT US
+        </span>
+
+        <h2>
+            Made With Love ❤️
+        </h2>
+
+        <p>
+            We prepare delicious homemade snacks and meals
+            with care, freshness and love.
+        </p>
+
+        <p>
+            Our goal is to give you great taste,
+            quality food and a smile in every bite.
+        </p>
+
+        <button
+            class="btn"
+            onclick="scrollToMenu()"
+            type="button">
+
+            Explore Our Menu
+
+        </button>
+
+    </div>
+
+
+    <div class="about2">
+
+        <img
+            src="./imagefolder/yam.png"
+            alt="Homemade food">
+
+    </div>
+
+</div>
+
+
+<!-- ================= WHY CHOOSE US ================= -->
+
+<p class="choose" id="image">
+
+    <span class="section-small">
+        WHY CHOOSE US?
+    </span>
+
+    <strong>
+        Your Satisfaction is Our Priority!
+    </strong>
+
+</p>
+
+
+<div class="whywrapp">
+
+
+    <div class="whyrapp1">
+
+        <i class="fa-solid fa-leaf"></i>
+
+        <h3>
+            Fresh Food
+        </h3>
+
+        <p>
+            Prepared fresh for
+            our customers.
+        </p>
+
+    </div>
+
+
+    <div class="whyrapp1">
+
+        <i class="fa-solid fa-heart"></i>
+
+        <h3>
+            Made With Love
+        </h3>
+
+        <p>
+            Every order is prepared
+            with care.
+        </p>
+
+    </div>
+
+
+    <div class="whyrapp1">
+
+        <i class="fa-solid fa-truck"></i>
+
+        <h3>
+            Delivery Available
+        </h3>
+
+        <p>
+            Get your order
+            delivered to you.
+        </p>
+
+    </div>
+
+
+    <div class="whyrapp1">
+
+        <i class="fa-solid fa-money-bill-wave"></i>
+
+        <h3>
+            Affordable
+        </h3>
+
+        <p>
+            Good food at
+            reasonable prices.
+        </p>
+
+    </div>
+
+</div>
+
+
+<!-- ================= GALLERY ================= -->
+
+<div class="gallery-section" id="gallery">
+
+    <p class="food">
+
+        <span class="section-small">
+            FOOD GALLERY
+        </span>
+
+        <strong>
+            Our Delicious Moments
+        </strong>
+
+    </p>
+
+
+    <div class="moment">
+
+        <div class="moment1">
+            <img src="./imagefolder/galary.png" alt="Food">
+        </div>
+
+        <div class="moment1">
+            <img
+                src="./imagefolder/galary4.png"
+                alt="Food">
+        </div>
+
+        <div class="moment1">
+            <img src="./imagefolder/galary1.png" alt="Food">
+        </div>
+
+        <div class="moment1">
+            <img
+                src="./imagefolder/galary2.png"
+                alt="Food">
+        </div>
+
+        <div class="moment1">
+            <img src="./imagefolder/galary3.png" alt="Food">
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ================= CONTACT ================= -->
+<section class="contect" id="contact">
+
+    <span class="section-small">
+        CONTACT US
+    </span>
+
+    <h2>
+        We'd Love To Hear From You ❤️
+    </h2>
+
+    <p>
+        <i class="fa-solid fa-phone"></i>
+        <a href="tel:+2349070439888">
+            09070439888
+        </a>
+    </p>
+
+    <p>
+        <i class="fa-brands fa-whatsapp"></i>
+        <a href="https://wa.me/2349070439888" target="_blank">
+            Chat With Us on WhatsApp
+        </a>
+    </p>
+
+    <p>
+        <i class="fa-solid fa-location-dot"></i>
+        Sallari Babban Giji, Kano State
+    </p>
+
+    <div class="map-container">
+
+        <iframe
+            src="https://www.google.com/maps?q=Sallari%20Babban%20Giji%20Kano%20Nigeria&output=embed"
+            loading="lazy"
+            allowfullscreen>
+        </iframe>
+
+    </div>
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="footer">
+
+    <div>
+
+        <h2>
+            Ummuh's Kitchen
+        </h2>
+
+        <p>
+            Homemade Food With Love ❤️
+        </p>
+
+    </div>
+
+
+    <div class="social-icons">
+
+        <a href="#" aria-label="Facebook">
+            <i class="fa-brands fa-facebook"></i>
+        </a>
+
+        <a href="#" aria-label="Instagram">
+            <i class="fa-brands fa-instagram"></i>
+        </a>
+
+        <a href="#" aria-label="TikTok">
+            <i class="fa-brands fa-tiktok"></i>
+        </a>
+
+        <a href="https://wa.me/2349070439888"
+            target="_blank"
+            aria-label="WhatsApp">
+
+            <i class="fa-brands fa-whatsapp"></i>
+
+        </a>
+
+    </div>
+
+
+    <p class="copyright">
+
+        © 2026 Ummuh's Kitchen & More.
+        All Rights Reserved.
+
+    </p>
+
+</footer>
+
+
+<script src="./script.js"></script>
+
+</body>
+
+</html>
